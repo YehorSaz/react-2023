@@ -1,38 +1,120 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.post {
+  background: rgba(210, 203, 203, 0.99);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.posts-container {
+  display: flex;
+  background: #ecd8d8;
+}
+
+.left {
+  margin-left: 10px;
+  font-size: 18px;
+  height: 50vh;
+  width: 50vw;
+  overflow: scroll;
+}
+
+.right {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  width: 50vw;
+}
+
+.text {
+  position: sticky;
+  top: 10px;
+}
+
+.buttonDetails {
+  width: 100px;
+  height: 20px;
+  margin-top: 5px;
+  font-size: 15px;
+}
+
+.buttonDetails:hover {
+  background: #beb4b4;
+}
+
+.mission-out {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 20px;
+  background: #d9d2d2;
+  padding: 5px;
+}
+
+.img-div {
+  margin-left: 100px;
+}
+
+.img-size {
+  width: 200px;
+  height: 200px;
+}
+
+.missions {
+  border-top: 1px solid silver;
+  margin-top: 2px;
+  width: 50vw;
+}
+
+.full-post {
+  background: #d9d4d4;
+  border-bottom: 1px solid silver;
+}
+
+.wrapper-bottom {
+  display: flex;
+}
+
+.advanced {
+  width: 50vw;
+  margin-left: 15px;
+  margin-top: 20px;
+}
+
+.all-posts {
+  margin-top: 3px;
+  min-height: 100px;
+  background: #e7e3e3;
+}
+
+.name {
+  text-align: center;
+  font-size: 18px;
+  text-decoration: underline;
+}
+
+.user-button {
+  width: 100px;
+  font-size: 14px;
+  margin: 5px 0 5px 0;
+}
+
+.allposts {
+  border-bottom: 1px solid silver;
+}
+
+.users {
+  background: #ded9d9;
+  padding: 5px;
+}
+
+.left-inner {
+  margin: 5px 0 5px;
+}
+
+p {
+  border-bottom: 1px solid silver;
 }
