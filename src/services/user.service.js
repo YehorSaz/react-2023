@@ -7,7 +7,7 @@ const userService = {
     createUser: (user) => axiosService.post(urls.user, user),
     getAllComments: () => axiosService.get(urls.comments),
     createComment: (comment) => axiosService.post(urls.comments, comment)
-}
+};
 
 export {
     userService

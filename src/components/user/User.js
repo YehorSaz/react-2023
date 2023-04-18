@@ -9,12 +9,14 @@ const User = ({user}) => {
     
     return (
         <div>
+
             <div>id: {id}</div>
             <div>name: {name}</div>
             <div>username: {username}</div>
             <div>email: {email}</div>
             <div>phone: {phone}</div>
             <div>website: {website}</div>
+
             <div>
                 <div><b>Address:</b></div>
                 <div>street: {street}</div>
@@ -27,13 +29,16 @@ const User = ({user}) => {
                     <div>lng: {lng}</div>
                 </div>
             </div>
+
             <div>
                 <div><b>Company:</b></div>
                 <div>companyName: {companyName}</div>
                 <div>catchPhrase: {catchPhrase}</div>
                 <div>bs: {bs}</div>
             </div>
+
             <hr/>
+
         </div>
     );
 };

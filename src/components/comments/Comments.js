@@ -6,7 +6,6 @@ import CommentsForm from "../commentsForm/CommentsForm";
 const Comments = () => {
 
     const [comments, setComments] = useState([]);
-
     const [allComments, setAllComments] = useState(null);
 
     useEffect(() => {
@@ -14,7 +13,6 @@ const Comments = () => {
     }, [allComments]);
 
     return (
-
 
         <div className={'comments'}>
 
@@ -25,7 +23,10 @@ const Comments = () => {
             </div>
 
 
-            <div className={'comments-right'}>{comments.map(comment => <Comment key={comment.id} comment={comment}/>)}</div>
+            <div className={'comments-right'}>
+                {comments.map(comment => <Comment key={comment.id} comment={comment}/>)}
+            </div>
+
         </div>
     );
 };

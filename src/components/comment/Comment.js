@@ -5,6 +5,7 @@ const Comment = ({comment}) => {
     const {postId, id, name, email, body} = comment;
 
     return (
+
         <div>
             <div>postId: {postId}</div>
             <div>id: {id}</div>

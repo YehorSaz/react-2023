@@ -14,24 +14,35 @@ const UserForm = ({setAllUsers}) => {
     }
 
     return (
+
         <form onSubmit={handleSubmit(save)}>
             <input type={'text'} placeholder={'name'} {...register('name', {
                 pattern: {
                     value: /^[a-zA-Zа-яА-яёЁіІїЇ\s]{1,40}$/,
                     message: 'wrong name'
                 },
-                required: {value: true, message: 'required'}
+                required: {
+                    value: true,
+                    message: 'required'
+                }
             })}/>
             {errors.name && <span>{errors.name.message}</span>}
 
-            <input type={'text'} placeholder={'username'} {...register('username', {required: true})}/>
+
+            <input type={'text'} placeholder={'username'} {...register('username', {
+                required: true
+            }
+            )}/>
 
             <input type={'text'} placeholder={'email'} {...register('email', {
                 pattern: {
                     value: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
                     message: 'wrong email'
                 },
-                required: {value: true, message: 'required'}
+                required: {
+                    value: true,
+                    message: 'required'
+                }
             })}/>
             {errors.email && <span>{errors.email.message}</span>}
 
@@ -41,7 +52,10 @@ const UserForm = ({setAllUsers}) => {
                     value: /(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?/,
                     message: 'wrong phone'
                 },
-                required: {value: true, message: 'required'}
+                required: {
+                    value: true,
+                    message: 'required'
+                }
             })}/>
             {errors.phone && <span>{errors.phone.message}</span>}
 

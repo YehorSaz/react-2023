@@ -12,22 +12,31 @@ const CommentsForm = ({setAllComments}) => {
         setAllComments(prev => !prev);
         console.log(data);
         reset();
-    }
+    };
 
     return (
+
         <form onSubmit={handleSubmit(saveComment)}>
             <input type={'text'} placeholder={'name'} {...register('name', {
                 required: {value: true, message: 'required'}
             })}/>
             {errors.name && <span>{errors.name.message}</span>}
 
+
             <input type={'text'} placeholder={'email'} {...register('email', {
-                required: {value: true, message: 'required'}
+                required: {
+                    value: true,
+                    message: 'required'
+                }
             })}/>
             {errors.email && <span>{errors.email.message}</span>}
 
+
             <input type={'text'} placeholder={'body'} {...register('body', {
-                required: {value: true, message: 'required'}
+                required: {
+                    value: true,
+                    message: 'required'
+                }
             })}/>
             {errors.body && <span>{errors.body.message}</span>}
 

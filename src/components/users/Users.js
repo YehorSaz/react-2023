@@ -6,7 +6,6 @@ import UserForm from "../uerForm/UserForm";
 const Users = () => {
 
     const [users, setUsers] = useState([]);
-
     const [allUsers, setAllUsers] = useState(null);
 
     useEffect(() => {
@@ -14,6 +13,7 @@ const Users = () => {
     }, [allUsers]);
 
     return (
+
         <div className={'users'}>
 
             <div className={'users-left'}>
@@ -25,6 +25,7 @@ const Users = () => {
             <div className={'users-right'}>
                 {users.map(user => <User key={user.id} user={user}/>)}
             </div>
+
         </div>
     );
 };
