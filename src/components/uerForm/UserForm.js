@@ -1,10 +1,12 @@
 import React from 'react';
 import {useForm} from "react-hook-form";
 import {userService} from "../../services/user.service";
+import {joiResolver} from '@hookform/resolvers/joi';
+import {userValidator} from "../../validators/User.validator";
 
 const UserForm = ({setAllUsers}) => {
 
-    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({mode: "all"});
+    const {register, handleSubmit, reset, formState: {errors, isValid}} = useForm({mode: "all", resolver:joiResolver(userValidator)});
 
     const save = async (user) => {
         const {data} = await userService.createUser(user);
@@ -16,47 +18,16 @@ const UserForm = ({setAllUsers}) => {
     return (
 
         <form onSubmit={handleSubmit(save)}>
-            <input type={'text'} placeholder={'name'} {...register('name', {
-                pattern: {
-                    value: /^[a-zA-Zа-яА-яёЁіІїЇ\s]{1,40}$/,
-                    message: 'wrong name'
-                },
-                required: {
-                    value: true,
-                    message: 'required'
-                }
-            })}/>
+            <input type={'text'} placeholder={'name'} {...register('name')}/>
             {errors.name && <span>{errors.name.message}</span>}
 
+            <input type={'text'} placeholder={'username'} {...register('username')}/>
+            {errors.username && <span>{errors.username.message}</span>}
 
-            <input type={'text'} placeholder={'username'} {...register('username', {
-                required: true
-            }
-            )}/>
-
-            <input type={'text'} placeholder={'email'} {...register('email', {
-                pattern: {
-                    value: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-                    message: 'wrong email'
-                },
-                required: {
-                    value: true,
-                    message: 'required'
-                }
-            })}/>
+            <input type={'text'} placeholder={'email'} {...register('email')}/>
             {errors.email && <span>{errors.email.message}</span>}
 
-
-            <input type={'text'} placeholder={'phone'} {...register('phone', {
-                pattern: {
-                    value: /(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?/,
-                    message: 'wrong phone'
-                },
-                required: {
-                    value: true,
-                    message: 'required'
-                }
-            })}/>
+            <input type={'text'} placeholder={'phone'} {...register('phone')}/>
             {errors.phone && <span>{errors.phone.message}</span>}
 
             <input type={'text'} placeholder={'website'} {...register('website')}/>

@@ -1,10 +1,15 @@
 import React, {useEffect} from 'react';
 import {useForm} from "react-hook-form";
 import {carServicevice} from "../../services/cars.service";
+import {joiResolver} from '@hookform/resolvers/joi';
+import {carValidator} from "../../validators/Car.validator";
 
 const CarForm = ({setAllcars, carForUpdate}) => {
 
-    const {register, reset, handleSubmit, formState: {errors, isValid}, setValue} = useForm({mode: "all"});
+    const {register, reset, handleSubmit, formState: {errors, isValid}, setValue} = useForm({
+        mode: "all",
+        resolver: joiResolver(carValidator)
+    });
 
     useEffect(() => {
         if (carForUpdate) {
@@ -32,31 +37,15 @@ const CarForm = ({setAllcars, carForUpdate}) => {
         <form onSubmit={handleSubmit(carForUpdate ? update : save)}>
 
 
-            <input type="text" placeholder={'brand'} {...register('brand', {
-                pattern: {
-                    value: /^[a-zA-Zа-яА-яёЁіІїЇ]{1,20}$/,
-                    message: 'wrong data'
-                },
-                required: {value: true, message: 'required'}
-            })}/>
+            <input type="text" placeholder={'brand'} {...register('brand')}/>
             {errors.brand && <span>{errors.brand.message}</span>}
 
 
-            <input type="text" placeholder={'price'} {...register('price', {
-                valueAsNumber: true,
-                min: {value: 0, message: 'min 0'},
-                max: {value: 1000000, message: 'max 1000000'},
-                required: {value: true, message: 'required'}
-            })}/>
+            <input type="text" placeholder={'price'} {...register('price')}/>
             {errors.price && <span>{errors.price.message}</span>}
 
 
-            <input type="text" placeholder={'year'} {...register('year', {
-                valueAsNumber: true,
-                min: {value: 1900, message: 'min 1900'},
-                max: {value: 2023, message: 'max 2023'},
-                required: {value: true, message: 'required'}
-            })}/>
+            <input type="text" placeholder={'year'} {...register('year')}/>
             {errors.year && <span>{errors.year.message}</span>}
 
 
