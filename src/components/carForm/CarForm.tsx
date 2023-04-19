@@ -10,10 +10,11 @@ import {IUseState} from "../../types/useState.type";
 
 interface IProps {
     setOnChange: IUseState<boolean>;
-    carForUpdate: ICar | null
+    carForUpdate: ICar | null;
+    setCarForUpdate: IUseState<ICar | null>;
 }
 
-const CarForm: FC<IProps> = ({setOnChange, carForUpdate}) => {
+const CarForm: FC<IProps> = ({setOnChange, carForUpdate, setCarForUpdate}) => {
 
     const {reset, handleSubmit, register, formState: {errors, isValid}, setValue} = useForm<ICar>({
         mode: 'all',
@@ -40,6 +41,7 @@ const CarForm: FC<IProps> = ({setOnChange, carForUpdate}) => {
         await carService.updateById(carForUpdate!.id, car);
         setOnChange(prevState => !prevState);
         reset()
+        setCarForUpdate(null);
     };
 
     return (

@@ -8,7 +8,7 @@ const carService = {
     getAll: (): IRes<ICar[]> => carsAxiosService.get(urls.carAPI.cars),
     create: (car: ICar): IRes<ICar> => carsAxiosService.post(urls.carAPI.cars, car),
     updateById: (id: number, car: ICar) => carsAxiosService.put(urls.carAPI.byId(id), car),
-    deliteById: (id: number): IRes<void> => carsAxiosService.delete(urls.carAPI.byId(id))
+    deleteById: (id: number): IRes<void> => carsAxiosService.delete(urls.carAPI.byId(id))
 };
 
 export {

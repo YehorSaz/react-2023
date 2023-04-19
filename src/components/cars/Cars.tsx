@@ -21,7 +21,7 @@ const Cars = () => {
         <div>
 
             <div>
-                <CarForm setOnChange={setOnChange} carForUpdate={carForUpdate}/>
+                <CarForm setOnChange={setOnChange} carForUpdate={carForUpdate} setCarForUpdate={setCarForUpdate}/>
             </div>
 
             <div>

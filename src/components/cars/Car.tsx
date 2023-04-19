@@ -6,8 +6,8 @@ import {carService} from "../../services/car.service";
 
 interface IProps {
     car: ICar;
-    setOnChange: IUseState<boolean>
-    setCarForUpdate: IUseState<ICar | null>
+    setOnChange: IUseState<boolean>;
+    setCarForUpdate: IUseState<ICar | null>;
 }
 
 const Car: FC<IProps> = ({car, setOnChange, setCarForUpdate}) => {
@@ -15,7 +15,7 @@ const Car: FC<IProps> = ({car, setOnChange, setCarForUpdate}) => {
     const {id, brand, price, year} = car;
 
     const deleteCar = async () => {
-        await carService.deliteById(id);
+        await carService.deleteById(id);
         setOnChange(prevState => !prevState);
     };
 
