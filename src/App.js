@@ -1,11 +1,22 @@
+import React from "react";
+
 import './App.css';
 
-function App() {
-  return (
-    <div>
+import Out from "./components/out/Out";
 
-    </div>
-  );
+
+function App() {
+
+    return (
+
+        <div>
+
+
+            <Out/>
+
+
+        </div>
+    );
 }
 
 export default App;
