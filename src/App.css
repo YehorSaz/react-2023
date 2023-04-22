@@ -1,0 +1,11 @@
+. comment-page {
+    display: flex;
+}
+
+.comments-left {
+    width: 50%;
+    background: yellow;
+}
+.comments-right {
+    width: 50%;
+}
