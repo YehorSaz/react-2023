@@ -1,11 +1,50 @@
-. comment-page {
+.header {
     display: flex;
+    justify-content: center;
 }
 
-.comments-left {
-    width: 50%;
-    background: yellow;
+.header-inner {
+    margin: 5px 50px 5px 50px;
+    font-size: 30px;
 }
-.comments-right {
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline dotted;
+}
+
+.home-page {
+    margin-top: 40px;
+    font-size: 50px;
+    text-align: center;
+}
+
+.comment-page {
+    display: flex;
+    width: 95vw;
+    height: 90vh;
+}
+
+.comments-left, .comments-right {
+    border: 1px solid silver;
+    padding: 5px;
     width: 50%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+button {
+    margin-top: 5px;
+}
+
+
+.albums, .todos {
+    padding: 5px;
+    margin-top: 20px;
+    border-top: 1px solid silver;
+    height: 80vh;
+    overflow-y: scroll;
 }

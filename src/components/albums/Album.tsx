@@ -11,10 +11,14 @@ const Album: FC<IProps> = ({album}) => {
     const {userId, id, title} = album;
 
     return (
+
         <div className={'one-album'}>
+
             <div>userId: {userId}</div>
             <div>id: {id}</div>
             <div>title: {title}</div>
+            <hr/>
+
         </div>
     );
 };

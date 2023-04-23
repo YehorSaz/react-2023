@@ -4,7 +4,7 @@ import {ITodo} from "../../interfaces/todo.interface";
 import {todoService} from "../../services/todo.service";
 import {Todo} from "./Todo";
 
-const Todos:FC = () => {
+const Todos: FC = () => {
 
     const [todos, setTodos] = useState<ITodo[]>([]);
 
@@ -13,10 +13,13 @@ const Todos:FC = () => {
     }, []);
 
     return (
+
         <div className={'todos'}>
+
             {
                 todos.map(todo => <Todo key={todo.id} todo={todo}/>)
             }
+
         </div>
     );
 };
