@@ -5,6 +5,7 @@ const comments = '/comments';
 const posts = '/posts';
 const albums = '/albums';
 const todos = '/todos';
+const users = '/users';
 
 const urls = {
     comments,
@@ -13,7 +14,9 @@ const urls = {
         byId: (id: string): string => `${posts}/${id}`
     },
     albums,
-    todos
+    todos,
+    users: {
+        byId: (id: number): string => `${users}/${id}`}
 };
 
 export {
