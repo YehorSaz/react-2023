@@ -1,0 +1,25 @@
+.wrapper {
+    display: flex;
+}
+
+.left, .right {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid silver;
+}
+
+.name {
+    position: sticky;
+    font-size: 30px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+}
+
+.comments, .posts {
+    height: 100%;
+    overflow-y: scroll;
+}
