@@ -1,11 +1,15 @@
 import './App.css';
 
-function App() {
-  return (
-    <div>
+import MainLayout from "./components/layout/MainLayout";
 
-    </div>
-  );
+function App() {
+
+    return (
+
+        <div>
+            <MainLayout />
+        </div>
+    );
 }
 
 export default App;

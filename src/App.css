@@ -1,0 +1,8 @@
+.container {
+    display: flex;
+}
+
+.cats, .dogs {
+    width: 50%;
+    border: 1px solid silver;
+}
