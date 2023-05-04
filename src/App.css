@@ -1,0 +1,17 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    align-self: center;
+    display: flex;
+    gap: 50px;
+    font-size: 40px;
+}
+
+.cars-page-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
